@@ -219,10 +219,10 @@ int main(int argc, char** argv) {
         for (int i = steps;
              i < fp32log2.poly->intervalInfo->intervals.size();
              i += steps) {
-            fp32log2.FindPolynomialsUntil({1, 2, 3}, i - 1);
+            fp32log2.FindPolynomialsUntil({1, 2, 3, 4, 5}, i - 1);
         }
 
-        fp32log2.FindPolynomials({1, 2, 3});
+        fp32log2.FindPolynomials({1, 2, 3, 4, 5});
         printf("\tCOMPLETED\n\n");
     
         fp32log2.poly->PrintPiecewiseInfo();
