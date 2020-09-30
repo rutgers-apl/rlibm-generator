@@ -1,0 +1,6 @@
+backup/**
+**/.DS_Store
+**/*~
+**/*.lp
+testing/
+**/*.data
