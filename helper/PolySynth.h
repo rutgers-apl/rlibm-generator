@@ -104,10 +104,6 @@ void PolySynth<T, E>::CalcFullIntervals() {
     for (uint32_t i = 0; i < upperLimit; i++) {
         Helper<T>::HexToValue(x, i);
         CalcOneInterval(x);
-        if (i % 100 == 0) {
-            printf("i = %u\r", i);
-            fflush(stdout);
-        }
     }
     printf("\n");
 }
@@ -124,7 +120,7 @@ PolySynth<T, E>::CalcSomeIntervalsUsingMap(uint32_t lower, uint32_t upper) {
         T res;
         double lb, ub, intPart;
         if (E::ComputeSpecialCase(x, res)) {
-            if (i % 100000 == 0) {
+            if (i % 100 == 0) {
                 printf("i = %u\r", i);
                 fflush(stdout);
             }
@@ -153,8 +149,8 @@ PolySynth<T, E>::CalcSomeIntervalsUsingMap(uint32_t lower, uint32_t upper) {
             intervalMap[reducedX] = std::move(temp);
         }
         
-        if (i % 500000 == 0) {
-            printf("i = %u, size = %lu\r", i, intervalMap.size());
+        if (i % 100 == 0) {
+            printf("i = %u\r", i);
             fflush(stdout);
         }
     }
@@ -187,7 +183,7 @@ void PolySynth<T, E>::GetChebyshevSample() {
         double inside = (i - 0.5) / sampleSize * PI_DOUBLE;
         double dx = term1 + term2 * cos(inside);
         x = dx;
-        float y;
+        T y;
         if (!E::ComputeSpecialCase(x, y)) CalcOneInterval(x);
     }
 }
