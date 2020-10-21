@@ -1,5 +1,5 @@
-# rlibm-generator
-This tool is used to generate the [rlibm](https://github.com/rutgers-apl/rlibm) math library. For more information behind the techniques in **rlibm-generator**, please refer to this [paper](https://arxiv.org/pdf/2007.05344.pdf).
+# RLibm-generator
+This tool is used to generate the [RLibm](https://github.com/rutgers-apl/rlibm) math library. For more information behind the techniques in **RLibm-generator**, please refer to this [paper](https://arxiv.org/pdf/2007.05344.pdf).
 
 ## Installation
 
