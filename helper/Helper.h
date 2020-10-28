@@ -122,7 +122,7 @@ void Helper<posit16>::CalculateInterval(posit16 py, double& _lb, double& _ub) {
         if (py.value == 0xFFFF) {
             // If py is negative minpos, then upper bound is < 0
             ub.x = 0x8000000000000001;
-        } else if (py.value == 0x7FFF) {
+        } else if (py.value == 0x8001) {
             // If py is positive maxpos, then lower bound is > infinity
             lb.x = 0xFFEFFFFFFFFFFFFF;
         }
@@ -150,7 +150,7 @@ double Helper<T>::convertPositToDouble(uint64_t ps, uint64_t nbit, uint64_t es) 
 
     // (1.5) If Sign bit is 1, perform two's complement
     if (sign == 1) {
-        ps = -ps;
+        ps = ~ps + 1;
         ps = (ps << (64 - nbit)) >> (64 - nbit);
     }
 
